@@ -48,13 +48,14 @@ Model used: **XGBoost Regressor**
 ---
 
 ## Project Structure
-├── data/
-│   └── raw/               # Original dataset
-├── notebooks/
-│   ├── 01_EDA.ipynb       # Exploratory data analysis
-│   └── 02_model.ipynb     # Model training and evaluation
-├── src/                   # Source code (coming soon)
-└── README.md
+
+    ├── data/
+    │   └── raw/               # Original dataset
+    ├── notebooks/
+    │   ├── 01_EDA.ipynb       # Exploratory data analysis
+    │   └── 02_model.ipynb     # Model training and evaluation
+    ├── src/                   # Source code (coming soon)
+    └── README.md
 
 
 
