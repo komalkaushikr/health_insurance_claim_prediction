@@ -54,7 +54,7 @@ Model used: **XGBoost Regressor**
     ├── notebooks/
     │   ├── 01_EDA.ipynb       # Exploratory data analysis
     │   └── 02_model.ipynb     # Model training and evaluation
-    ├── src/                   # Source code (coming soon)
+    ├── src/                   # Source code 
     └── README.md
 
 
