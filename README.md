@@ -1,78 +1,102 @@
-# Health Insurance Claim Prediction
+#  Health Insurance Claim Prediction
 
-A machine learning project that predicts health insurance claim amounts using patient data. Built to demonstrate end-to-end data science skills — from raw data to a trained model with business insights.
+> Predicting insurance claim costs using machine learning — helping insurers set accurate premiums and reduce financial risk.
 
+##  Live Demo
+###  [Try the Live Dashboard](https://healthinsuranceclaimprediction.streamlit.app)
+*Enter any patient profile and get an instant claim prediction with full explanation*
 
+---
 
-## Business Problem
+##  Business Problem
 
-Insurance companies need to accurately predict claim costs to set fair premiums. Overestimating loses customers. Underestimating loses money. This model predicts claim amounts with 96% accuracy (R² = 0.96).
+Insurance companies lose millions every year from mispriced premiums:
+- **Underpricing** → company pays more than it collects → financial loss
+- **Overpricing** → customers leave for competitors → revenue loss
 
+This model predicts claim amounts for new customers **before** they file a claim — allowing insurers to price premiums accurately from day one.
 
+**Who benefits:**
+- Underwriters setting premium prices
+- Risk assessment teams
+- Actuarial departments
 
-## Dataset
+---
 
-- 15,000 patients
-- 13 features: age, BMI, smoker status, hereditary diseases, diabetes, and more
-- Target variable: claim amount (ranges from $0 to $65,000)
-
-
-
-## Key Findings from EDA
-
-- Smokers claim **3x more** than non-smokers
-- Heart Disease patients have the highest average claims
-- Claim amounts increase with age
-- Diabetic patients claim significantly more than non-diabetic
-
-
-
-## Model Performance
+##  Results
 
 | Metric | Score |
 |--------|-------|
 | R² Score | 0.960 |
 | Mean Absolute Error | $1,053 |
+| Training Data | 15,000 patients |
 
-Model used: **XGBoost Regressor**
-
-
-## Top Features Driving Claims
-
-1. Smoker status (by far the most important)
-2. Hereditary diseases
-3. BMI
-4. Diabetes
-5. Age
+> The model explains **96% of claim variation** with an average error of only $1,053 on claims up to $65,000.
 
 ---
 
-## Project Structure
+##  Key Insights
+
+-  **Smokers claim 3x more** than non-smokers — the single biggest cost driver
+-  **Heart Disease** patients have the highest average claims of all conditions
+-  **Age** and **BMI** consistently increase claim amounts
+-  **Diabetic patients** cost significantly more than non-diabetic on average
+
+These insights can directly inform premium pricing tiers by risk segment.
+
+---
+
+##  Technical Stack
+
+| Layer | Tools |
+|-------|-------|
+| Data Analysis | Python, Pandas, NumPy |
+| Visualization | Matplotlib, Seaborn |
+| Machine Learning | Scikit-learn, XGBoost |
+| Explainability | SHAP |
+| Dashboard | Streamlit |
+| Version Control | Git, GitHub |
+
+---
+
+##  Project Structure
 
     ├── data/
-    │   └── raw/               # Original dataset
+    │   └── raw/               # Original dataset (15,000 patients)
     ├── notebooks/
-    │   ├── 01_EDA.ipynb       # Exploratory data analysis
-    │   └── 02_model.ipynb     # Model training and evaluation
-    ├── src/                   # Source code 
+    │   ├── 01_EDA.ipynb       # Exploratory analysis & business insights
+    │   └── 02_model.ipynb     # Model training, evaluation & SHAP
+    ├── src/
+    │   ├── app.py             # Streamlit dashboard
+    │   └── model.pkl          # Trained XGBoost model
     └── README.md
 
+---
 
+##  Methodology
 
-## Tools Used
+1. **EDA** — Identified key cost drivers across 13 patient features
+2. **Feature Engineering** — Encoded categorical variables, handled missing values
+3. **Modeling** — Trained XGBoost Regressor with 80/20 train-test split
+4. **Explainability** — SHAP values show exactly why each prediction was made
+5. **Deployment** — Live Streamlit dashboard for real-time predictions
 
-- Python, Pandas, NumPy
-- Scikit-learn, XGBoost
-- Matplotlib, Seaborn
-- Git, GitHub
+---
 
-
-
-## How to Run
+## ▶ Run Locally
 
 ```bash
 git clone https://github.com/komalkaushikr/health_insurance_claim_prediction.git
 cd health_insurance_claim_prediction
 pip install -r requirements.txt
-jupyter notebook
+streamlit run src/app.py
 ```
+
+---
+
+##  About
+
+Built by **Komal Kaushik** as a demonstration of end-to-end data science skills —
+from raw data to a deployed, explainable ML product.
+
+[![GitHub](https://img.shields.io/badge/GitHub-komalkaushikr-181717?style=flat&logo=github)](https://github.com/komalkaushikr)
