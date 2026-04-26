@@ -25,13 +25,28 @@ This model predicts claim amounts for new customers **before** they file a claim
 
 ##  Results
 
+## 📊 Results & Business Impact
+
 | Metric | Score |
 |--------|-------|
 | R² Score | 0.960 |
 | Mean Absolute Error | $1,053 |
-| Training Data | 15,000 patients |
+| Baseline MAE (naive model) | $9,163 |
+| Accuracy within 20% of actual | 83.2% of cases |
 
-> The model explains **96% of claim variation** with an average error of only $1,053 on claims up to $65,000.
+> The model is **88.5% more accurate** than a naive average-based prediction.
+
+### 💰 Estimated Business Impact
+
+For an insurer managing **10,000 policies per year**:
+
+| Approach | Annual Mispricing Cost |
+|----------|----------------------|
+| Naive model (predict average) | $91,627,852 |
+| This ML model | $10,530,000 |
+| **Estimated annual savings** | **$81,097,852** |
+
+> By replacing average-based pricing with this model, an insurer could reduce premium mispricing costs by **~$81M per year** on a 10,000-policy portfolio.
 
 ---
 
